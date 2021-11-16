@@ -9,15 +9,17 @@ It was built with **NodeJS**, **ExpressJS**, **Bootstrap 4**, **AdminLTE 3**, **
 * [x] Add, Edit and Delete data from DB with the use of the backoffice
 * [x] Login and Logout
 * [x] Endpoint to send data from the DB 
-* [ ] Upload image
+* [ ] Upload image example
 * [ ] Manage login users in backoffice
 * [ ] Store session for a period of time
+* [ ] Forgot password
+* [ ] Register
 
 ## How to use it? 
 
 After cloning this repo, run the command: ```npm install```
 
-Import the database that is inside the folder **db**
+Import the database that is inside the folder **db**, and don't forget to change your **connection settings** in ```app.js```
 
 To run the project, run: ```npm start```
 
