@@ -1,0 +1,87 @@
+extends ../layout/base-datatables.pug
+
+block content 
+	div.content-header
+		div.container-fluid
+			div.row.mb-2
+				div.col-sm-6
+					h1.m-0
+						| Customers
+				div.col-sm-6
+					ol.breadcrumb.float-sm-right
+						li.breadcrumb-item
+							a(href="/")
+								| Home 
+						li.breadcrumb-item.active
+							| Customers
+			div.row.mb-2 
+				div.col-12
+					a(href='customers/add').btn.btn-primary
+						i.fa.fa-plus 
+						|  Add Customer	
+
+	section.content 
+		div.container-fluid
+			div.row
+				div.col-12
+					div.card
+						div.card-body
+							div#table_wrapper.dataTables_wrapper.dt-bootstrap4
+								div.row
+									- if(messages.msg_info)
+										div.col-12
+											.alert.alert-success.alert-dismissable
+												button.close(type='button', data-dismiss='alert', aria-hidden='true')
+													| ×
+												h4
+													i.icon.fa.fa-check
+													| Success!
+												| !{messages.msg_info}
+									- if(messages.msg_error)
+										div.col-12
+											.alert.alert-danger.alert-dismissable
+												button.close(type='button', data-dismiss='alert', aria-hidden='true')
+													| ×
+												h4
+													i.icon.fa.fa-ban
+													| Alert!
+												| !{messages.msg_error}
+
+								div.row
+										div.col-12
+											table#table.table.table-hover.dataTable.dtr-inline(role="grid")
+												thead
+													tr
+														th
+															| No
+														th
+															| Name
+														th
+															| Address
+														th
+															| Phone
+														th
+															| Email
+														th
+															| Action
+												for row, index in data 
+													tr
+														td #{index+1}
+														td #{row.name}
+														td #{row.address}
+														td #{row.email}
+														td #{row.phone}
+														td
+															div(style='display:inline-block')
+																a(href='/customers/edit/' + row.id).btn.btn-sm.btn-primary
+																		i.fa.fa-edit
+															| 
+															div(style='display:inline-block')
+																form(method='post', action='/customers/delete/' + row.id)
+																	input(type="hidden",name="_method", value="DELETE")
+																	button.btn.btn-sm.btn-danger(type='submit')
+																		i.fas.fa-trash-alt
+								div.row
+										div.col-12.col-md-6
+											div#table_info.dataTables_info(role="status")
+												//- Total entries and pagination text added by JS
