@@ -9,6 +9,9 @@ It was built with **NodeJS**, **ExpressJS**, **Bootstrap 4**, **AdminLTE 3**, **
 * [x] Add, Edit and Delete data from DB with the use of the backoffice
 * [x] Login and Logout
 * [x] Endpoint to send data from the DB 
+* [x] Tabelas responsive
+* [x] Paginação e pesquisa dentro de tabelas
+* [x] Export options: CSV, PDF e Print
 * [ ] Upload image example
 * [ ] Manage login users in backoffice
 * [ ] Store session for a period of time
@@ -19,14 +22,17 @@ It was built with **NodeJS**, **ExpressJS**, **Bootstrap 4**, **AdminLTE 3**, **
 
 After cloning this repo, run the command: ```npm install```
 
-Import the database that is inside the folder **db**, and don't forget to change your **connection settings** in ```app.js```
+Import the database that is inside the folder **db**
+
+Copy ```.env.example``` to ```.env``` and add your settings, including database connection
 
 To run the project, run: ```npm start```
 
-It will be available on port ```:3000``` and you can use ```teste@teste.pt``` and ```teste``` as password to login.
+The default port is ```:3000``` and you can use ```teste@teste.pt``` and ```teste``` as password to login.
 
 The example endpoint can be accessed in ```http://localhost:3000/api/customers```
 
 ### Links
 
 [AdminLte](https://adminlte.io/)
+[Pug - How to use](https://flaviocopes.com/pug/#including-other-pug-files)

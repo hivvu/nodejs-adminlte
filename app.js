@@ -1,22 +1,24 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var flash = require('express-flash');
-var session = require('express-session');
-var index = require('./routes/index');
-var users = require('./routes/users');
-var customers = require('./routes/customers');
-var api = require('./routes/api');
-var expressValidator = require('express-validator');
-var methodOverride = require('method-override');
+require('dotenv').config();
 
-var connection = require('express-myconnection');
-var mysql = require('mysql');
+const express = require('express');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const flash = require('express-flash');
+const session = require('express-session');
+const index = require('./routes/index');
+const users = require('./routes/users');
+const customers = require('./routes/customers');
+const api = require('./routes/api');
+const expressValidator = require('express-validator');
+const methodOverride = require('method-override');
+const connection = require('express-myconnection');
+const mysql = require('mysql');
+const app = express();
 
-var app = express();
+const PORT = process.env.PORT || 3000;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -43,12 +45,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(
   connection(mysql, {
-    host: '127.0.0.1',
-    user: 'ivo.pereira',
-    password: 'teste123',
-    port: 8889, //3306 
-    database: 'nodejs'
-  }, 'pool') //single,pool, request
+    host: process.env.DBHOST,
+    user: process.env.DBUSER,
+    password: process.env.DBPASS,
+    port: process.env.DBPORT,
+    database: process.env.DBNAME,
+  }, 'pool') //single, pool, request
 );
 
 app.use('/', index);
@@ -72,6 +74,10 @@ app.use(function (err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
 
 module.exports = app;
