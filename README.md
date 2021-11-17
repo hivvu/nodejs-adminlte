@@ -9,14 +9,15 @@ It was built with **NodeJS**, **ExpressJS**, **Bootstrap 4**, **AdminLTE 3**, **
 * [x] Add, Edit and Delete data from DB with the use of the backoffice
 * [x] Login and Logout
 * [x] Endpoint to send data from the DB 
-* [x] Tabelas responsive
-* [x] Paginação e pesquisa dentro de tabelas
+* [x] Responsive data tables
+* [x] Pagination and search from data tables
 * [x] Export options: CSV, PDF e Print
+* [x] Dynamic menu
 * [ ] Upload image example
 * [ ] Manage login users in backoffice
-* [ ] Store session for a period of time
-* [ ] Forgot password
-* [ ] Register
+* [ ] Store session for a period of time (Remember me)
+* [ ] Forgot password form
+* [ ] Register form
 
 ## How to use it? 
 
