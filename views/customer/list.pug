@@ -3,19 +3,10 @@ extends ../layout/base-datatables.pug
 block content 
 	div.content-header
 		div.container-fluid
-			div.row.mb-2
-				div.col-sm-6
+			div.row.mb-2.mt-3
+				div.col-12.d-flex.justify-content-between
 					h1.m-0
 						| Customers
-				div.col-sm-6
-					ol.breadcrumb.float-sm-right
-						li.breadcrumb-item
-							a(href="/")
-								| Home 
-						li.breadcrumb-item.active
-							| Customers
-			div.row.mb-2 
-				div.col-12
 					a(href='customers/add').btn.btn-primary
 						i.fa.fa-plus 
 						|  Add Customer	
