@@ -12,29 +12,23 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4
 				a.d-block(href="#")
 					| Joe Doe
 
-		//- div.form-inline
-		//- 	div.input-group(data-widget="sidebar-search")
-		//- 		input.form-control.form-control-sidebar(type="search",placeholder="Search",aria-label="Search")
-		//- 		div.input-group-append
-		//- 			button.btn.btn-sidebar
-		//- 				i.fas.fa-search.fa-fw
-
 		nav.mt-2
 			ul.nav.nav-pills.nav-sidebar.flex-column(data-widget="treeview",role="menu",data-accordion="false")
-				li.nav-item.menu-open 
-					a.nav-link.active(href="#")
-						i.nav-icon.fas.fa-users
+				li.nav-item
+					a.nav-link(href="/customers")
+						i.nav-icon.fas.fa-user-friends
 						p
 							| Customers
+
+				li.nav-item
+					a.nav-link(href="#")
+						i.nav-icon.fas.fa-cog
+						p
+							| Settings
 							i.right.fas.fa-angle-left
 					ul.nav.nav-treeview 
 						li.nav-item 
-							a.nav-link.active(href="/customers")
-								i.far.fa-circle.nav-icon
+							a.nav-link(href="/users")
+								i.nav-icon.fas.fa-user
 								p 
-									| All customers
-						li.nav-item 
-							a.nav-link(href="/customers/add")
-								i.far.fa-circle.nav-icon
-								p 
-									| Add new
+									| Users
