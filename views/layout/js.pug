@@ -19,3 +19,24 @@ script.
 				}
 			}
 		});
+
+		//- Modal autofocus on open
+		$('.modal').on('shown.bs.modal', function () {
+			$('.close').trigger('focus');
+		});
+
+		//- Open confirmation modal 
+		$('.js-show-confirmation-modal').on('click', function(e){
+			var form = $(this).closest('form');
+
+			e.preventDefault();
+			$('.confirmation-modal').modal();
+			$('.confirmation-modal').on('click', '.js-confirm', function(e) {
+				form.trigger('submit');
+			});	
+			
+			$('.js-cancel').on('click', function(e){
+			 e.preventDefault();
+			 $('.confirmation-modal').modal.model('hide');
+			});
+		});
