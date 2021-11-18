@@ -6,7 +6,7 @@ block content
 			div.row.mb-2.mt-3
 				div.col-12
 					h1.m-0
-						| Add customer
+						| Add user
 	section.content
 		div.card
 			div.card-body
@@ -18,25 +18,21 @@ block content
 							i.icon.fa.fa-ban
 							| Alert! 
 						| !{messages.msg_error}
-				form(role='form',method='post',action='/customers/add')
+				form(role='form',method='post',action='/users/add')
 					div.row
 						div.col-12
-							div.form-group
-								label
-									| Name
-								input.form-control(type='text',value='',name='name',placeholder='Enter Name', autofocus)
-							div.form-group
-								label
-									| Address
-								input.form-control.form-group(type='text',name='address',placeholder='Enter address')
 							div.form-group
 								label
 									| Email
 								input.form-control(type='text',value='',name='email',placeholder='Enter Address')
 							div.form-group
 								label
-									| Phone
-								input.form-control(type='text',name='phone',placeholder='Enter Phone')
+									| Password
+								input.form-control(type='password',name='password',placeholder='Enter password')
+							div.form-group
+								label
+									| Confirm password
+								input.form-control(type='password',name='confirm',placeholder='Confirm your password')
 						div.col-12.text-right
 							button.btn.btn-primary(type='submit')
-								| Add customer
+								| Add user
