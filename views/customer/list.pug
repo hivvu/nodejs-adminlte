@@ -53,15 +53,15 @@ block content
 															| Phone
 														th
 															| Email
-														th
+														th(width='80')
 															| Action
 												for row, index in data 
 													tr
 														td #{index+1}
 														td #{row.name}
 														td #{row.address}
-														td #{row.email}
 														td #{row.phone}
+														td #{row.email}
 														td
 															div(style='display:inline-block')
 																a(href='/customers/edit/' + row.id).btn.btn-sm.btn-primary
